@@ -28,7 +28,7 @@ var paramChecker = function() {
   var testKeys = Object.keys(test);
   
   for (var i=0;i<testKeys.length;i++) {
-    if (testKeys.indexOf( givenKeys[i]) === -1 ) {
+    if (givenKeys.indexOf( testKeys[i]) === -1 ) {
       
       var temp = { };
       temp[ testKeys[i] ] = "required";
@@ -47,14 +47,18 @@ var paramChecker = function() {
   }
   
   if (errors.length) {
-    callback(errors,null);
-    return false;
+    if (cb) {
+      cb(errors,null);
+      return false;
+    } else {
+      return errors;
+    }
   }
   
   
   var types = [ "number", "string", "function", "object", "array" ];
   
-  var constituents = [ "length" ];
+  var constituents = [ "length", "regex" ];
   
   
   
@@ -88,6 +92,14 @@ var paramChecker = function() {
           throw new Error("unknown constituent " + con);
         }
         switch (con) {
+          case "regex":
+            var re = new RegExp( test[key][con]);
+            if (! re.test( given[key])) {
+              var temp =  { };
+              temp[key] = "does not pass regex test";
+              errors.push(temp);
+            }
+            break;
           case "length":
           //if (given[key].length !== test[key][con]) {
           //  errors.push({ key : "Invalid length" });
@@ -121,6 +133,15 @@ var paramChecker = function() {
   
 }
 
-var test = { omg: "strin", "hi": "number"};
-var data = { omg: "foo", "hi": "shit" };
+var data = {
+  username: "foo",
+  firstname: "Foo",
+  age: "twenty"
+};
+
+var test = {
+    username: "string",
+    firstname: "string",
+    age: "number"
+};
 console.log( paramChecker(data,test) );
