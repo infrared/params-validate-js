@@ -1,0 +1,9 @@
+.DS_Store
+public/gen
+*.lock
+*.swp
+*.out
+*.pyc
+node_modules/
+logs/*
+invoice-pdf/*
