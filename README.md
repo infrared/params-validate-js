@@ -2,11 +2,17 @@
 
 **Synopsis:**
     
-    paramsValidate(data,test); //true or false
+    paramsValidate(data,test); //returns true if passed, or a list of errors if it doesn't
     
     or with a callback
     
-    paramsValidate(data,test,callback);
+    paramsValidate(data,test,function(err,res) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('passed!');
+        }
+    });
 
 
 **Example:**
