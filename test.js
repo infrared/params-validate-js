@@ -7,16 +7,16 @@ var pv = require('./lib/index.js');
 var data = {
   username: "foo",
   firstname: "Foo",
-  lastname: "fart",
-    age: "twenty",
+  lastname: "shit",
+    age: 89,
   role: "fart"
 };
 
 var test = {
   username: "string",
   firstname: "string",
-  lastname: function(x) { return true },
-  age: "number",
+  lastname: "string",
+  age: "either",
   role: {
     isin: ["fart"]
   }
