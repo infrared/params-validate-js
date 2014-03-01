@@ -1,5 +1,16 @@
+##Description##
+Validate parameters 
 
-**Synopsis:**
+##Installation##
+
+```bash
+npm install params-validate
+```
+or in the browser:
+```html
+<script src="https://raw.github.com/infrared/params-validate-js/development/lib/index.js"></script>
+```
+##Usage##
     
     var paramsValidate = require('params-validate');
     
@@ -8,17 +19,19 @@
     
     //or with a callback:
     
-    paramsValidate(data,test,function(err,res) {
-        if (err) {
-            console.log(err);
+    paramsValidate(data,test,function(errors,res) {
+        if (errors) {
+            console.log(errors);
         } else {
+            //res is true
             console.log('passed!');
         }
     });
 
 
 
-**Example:**
+
+##Examples##
 ```javascript
     var data = {
       username: "foo",
@@ -38,14 +51,62 @@
     Returns:
     [ { lastname: 'required' } ]
 ```
-**Currently supported tests**
- * string - test if given data is a string
- * number - test if given data is a number
- * function - supply a function to validate the data
 
-*Using a function*
+** string - test if param is a string**
+          
+```javascript
+    var data = {
+        foo: "bar"
+    }
+    var test = {
+        foo: "string"
+    }
+    //passes
+```
+** number - test if param is a number**
 
-To pass the test, the function must return true. To fail the test, just return a string
+```javascript
+    var data = {
+        foo: 5
+    }
+    var test = {
+        foo: "number"
+    }
+    //passes
+```
+**either - test if param is either string or number**
+```javascript
+    var data = {
+        foo: "oh hi"
+    }
+    var test = {
+        foo: "either"
+    }
+    //passes
+```
+** object - test if param is a key/value object**
+```javascript
+    var data = {
+        foo: { bar: "baz"}
+    }
+    var test = {
+        foo: "object"
+    }
+    //passes
+```
+** array  - test if param is an array**
+```javascript
+    var data = {
+        foo: [ "bar", "baz" ]
+    }
+    var test = {
+        foo: "array"
+    }
+    //passes
+```
+** function - supply a function to validate the data**
+
+To pass the test with a function, the function must return true. To fail the test, just return a string
 ```javascript
     // passes
     var test = {
@@ -60,7 +121,7 @@ To pass the test, the function must return true. To fail the test, just return a
 
 **Constituents**
 
-Optional constituents can be added for each key for granular validation.
+Optional constituents can be added for granular validation.
 
 ```javascript
     var test = {

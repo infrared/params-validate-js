@@ -1,0 +1,25 @@
+{
+  "author": "Michael Kroher",
+  "name": "params-validate",
+  "description": "Validate params",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/infrared/params-validate-js.git"
+  },
+  "main": "./lib/index",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "keywords": [
+    "param validation"
+  ],
+  "bugs": {
+    "url": "https://github.com/infrared/params-validate-js/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}

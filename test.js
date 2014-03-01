@@ -8,7 +8,7 @@ var data = {
   username: "foo",
   firstname: "Foo",
   lastname: "shit",
-    age: 89,
+    age: ["shit", "face"],
   role: "fart"
 };
 
@@ -16,7 +16,7 @@ var test = {
   username: "string",
   firstname: "string",
   lastname: "string",
-  age: "either",
+  age: "array",
   role: {
     isin: ["fart"]
   }
