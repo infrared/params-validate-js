@@ -52,7 +52,7 @@ or in the browser:
     [ { lastname: 'required' } ]
 ```
 
-** string - test if param is a string**
+**string - test if param is a string**
           
 ```javascript
     var data = {
@@ -63,7 +63,7 @@ or in the browser:
     }
     //passes
 ```
-** number - test if param is a number**
+**number - test if param is a number**
 
 ```javascript
     var data = {
@@ -84,7 +84,7 @@ or in the browser:
     }
     //passes
 ```
-** object - test if param is a key/value object**
+**object - test if param is a key/value object**
 ```javascript
     var data = {
         foo: { bar: "baz"}
@@ -94,7 +94,7 @@ or in the browser:
     }
     //passes
 ```
-** array  - test if param is an array**
+**array  - test if param is an array**
 ```javascript
     var data = {
         foo: [ "bar", "baz" ]
@@ -104,7 +104,7 @@ or in the browser:
     }
     //passes
 ```
-** function - supply a function to validate the data**
+**function - supply a function to validate the data**
 
 To pass the test with a function, the function must return true. To fail the test, just return a string
 ```javascript
