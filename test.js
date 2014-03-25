@@ -9,7 +9,8 @@ var data = {
   firstname: "Foo",
   lastname: "shit",
     age: ["shit", "face"],
-  role: "fart"
+  role: "fart", 
+    cost: "a"
 };
 
 var test = {
@@ -19,7 +20,8 @@ var test = {
   age: "array",
   role: {
     isin: ["fart"]
-  }
+  },
+ cost: "price"
 };
 pv(data,test,function(err,res) {
   console.log(err);

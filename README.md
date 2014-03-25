@@ -104,6 +104,16 @@ or in the browser:
     }
     //passes
 ```
+**price - test if param is a price format**
+```javascript
+    var data = {
+        cost: "5.00"
+    }
+    var test = {
+        cost : "price"
+    }
+    //passes
+```
 **function - supply a function to validate the data**
 
 To pass the test with a function, the function must return true. To fail the test, just return a string
