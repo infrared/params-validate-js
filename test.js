@@ -8,9 +8,9 @@ var data = {
   username: "foo",
   firstname: "Foo",
   lastname: "shit",
-    age: ["shit", "face"],
+  age: ["shit", "face"],
   role: "fart", 
-    cost: "a"
+  cost: -5.0
 };
 
 var test = {
@@ -21,7 +21,7 @@ var test = {
   role: {
     isin: ["fart"]
   },
- cost: "price"
+ cost: "posNumber"
 };
 pv(data,test,function(err,res) {
   console.log(err);
