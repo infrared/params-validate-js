@@ -4,6 +4,7 @@ public/gen
 *.swp
 *.out
 *.pyc
+*.log
 node_modules/
 logs/*
 invoice-pdf/*
